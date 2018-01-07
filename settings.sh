@@ -1,7 +1,7 @@
 #!/bin/bash
 
-gitname="Test"
-gitemail="test@test.com"
+git_name="Test"
+git_email="test@test.com"
 
 device="i9300"
 

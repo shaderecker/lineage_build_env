@@ -4,7 +4,7 @@ trap 'exit 130' INT
 
 source settings.sh
 
-echo Starting unattended Setup for LineageOS Building Environment...
+echo Starting unattended Setup for LineageOS Build Environment...
 
 cd ~/
 
@@ -27,8 +27,8 @@ sudo apt-get install -y bc bison build-essential curl flex git gnupg gperf libes
 echo Installing packages finished.
 
 echo Setting global gitconfig
-git config --global user.name "$gitname" #Specify in settings
-git config --global user.email "$gitemail" #Specify in settings
+git config --global user.name "$git_name" #Specify in settings
+git config --global user.email "$git_email" #Specify in settings
 git config --global color.ui true
 
 echo Making directories
