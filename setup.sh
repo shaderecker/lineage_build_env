@@ -57,7 +57,7 @@ breakfast $device
 
 echo Now we need some repository for getting vendor files #Specify in settings
 cd $path
-git clone $vendor           #This whole bunch should pbb go into roomservice.xml
+git clone $vendor           #This whole bunch should pbb go into roomservice.xml for continuous updates
 
 echo Repeating breakfast after vendor files in case sth went wrong previousley
 breakfast $device
