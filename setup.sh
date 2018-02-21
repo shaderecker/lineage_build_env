@@ -45,7 +45,7 @@ cd ~/android/lineageos/
 repo init -u git://github.com/lineageos/android.git -b cm-14.1
 
 echo Syncing repo
-repo sync
+repo sync --force-sync
 
 echo envsetup
 cd ~/android/lineageos
@@ -56,8 +56,16 @@ echo Breakfast new device #Specify in settings
 breakfast $device
 
 echo Now we need some repository for getting vendor files #Specify in settings
-cd $path
+cd ~/android/lineageos/vendor
+mkdir -p $path
+mkdir -p temp
+cd ~/android/lineageos/vendor/$path
 git clone $vendor           #This whole bunch should pbb go into roomservice.xml for continuous updates
+cp -r ~/android/lineageos/vendor/$path/*/. ~/android/lineageos/vendor/temp
+cd ~/android/lineageos/vendor
+rm -rf ~/android/lineageos/vendor/$path
+mkdir -p $path
+cp -r ~/android/lineageos/vendor/temp/. ~/android/lineageos/vendor/$path
 
 echo Repeating breakfast after vendor files in case sth went wrong previousley
 breakfast $device
