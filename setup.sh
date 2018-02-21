@@ -70,3 +70,14 @@ cp -r ~/android/lineageos/vendor/temp/. ~/android/lineageos/vendor/$path
 echo Repeating breakfast after vendor files in case sth went wrong previousley
 breakfast $device
 
+echo Setting up environment variables
+
+echo USE_CCACHE=1 >> ~/.bashrc
+echo ANDROID_CCACHE_DIR="$HOME/android/.ccache" >> ~/.bashrc
+echo ANDROID_CCACHE_SIZE="$ccache" >> ~/.bashrc
+echo USE_NINJA=false >> ~/.bashrc
+echo JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx$ram" >> ~/.bashrc
+echo WITH_SU=true >> ~/.bashrc
+
+echo Sourcing .bashrc
+source ~/.bashrc
