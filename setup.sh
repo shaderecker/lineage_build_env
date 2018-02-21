@@ -66,6 +66,7 @@ cd ~/android/lineageos/vendor
 rm -rf ~/android/lineageos/vendor/$path
 mkdir -p $path
 cp -r ~/android/lineageos/vendor/temp/. ~/android/lineageos/vendor/$path
+rm -rf ~/android/lineageos/vendor/temp
 
 echo Repeating breakfast after vendor files in case sth went wrong previousley
 breakfast $device
