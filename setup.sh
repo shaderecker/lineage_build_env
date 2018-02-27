@@ -73,6 +73,8 @@ breakfast $device
 
 echo Setting up environment variables
 
+echo  >> ~/.bashrc
+echo \# LineageOS Build Environment  >> ~/.bashrc
 echo USE_CCACHE=1 >> ~/.bashrc
 echo ANDROID_CCACHE_DIR="$HOME/android/.ccache" >> ~/.bashrc
 echo ANDROID_CCACHE_SIZE="$ccache" >> ~/.bashrc
