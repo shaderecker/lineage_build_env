@@ -84,3 +84,13 @@ echo WITH_SU=true >> ~/.bashrc
 
 echo Sourcing .bashrc
 source ~/.bashrc
+
+echo Cleaning...
+cd ~/android/lineageos
+make clean
+
+echo Repopicking...
+repopick -f -t i9300-personal-build
+
+echo Starting build...
+brunch i9300
