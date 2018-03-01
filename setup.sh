@@ -75,12 +75,12 @@ echo Setting up environment variables
 
 echo  >> ~/.bashrc
 echo \# LineageOS Build Environment  >> ~/.bashrc
-echo USE_CCACHE=1 >> ~/.bashrc
-echo ANDROID_CCACHE_DIR=\"$HOME/android/.ccache\" >> ~/.bashrc
-echo ANDROID_CCACHE_SIZE=\"$ccache\" >> ~/.bashrc
-echo USE_NINJA=false >> ~/.bashrc
-echo JACK_SERVER_VM_ARGUMENTS=\"-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx$ram\" >> ~/.bashrc
-echo WITH_SU=true >> ~/.bashrc
+echo 'export USE_CCACHE=1' >> ~/.bashrc
+echo 'export ANDROID_CCACHE_DIR=\"$HOME/android/.ccache\"' >> ~/.bashrc
+echo 'export ANDROID_CCACHE_SIZE=\"$ccache\"' >> ~/.bashrc
+echo 'export USE_NINJA=false' >> ~/.bashrc
+echo 'export JACK_SERVER_VM_ARGUMENTS=\"-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx$ram\"' >> ~/.bashrc
+echo 'export WITH_SU=true' >> ~/.bashrc
 
 echo Sourcing .bashrc
 source ~/.bashrc
