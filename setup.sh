@@ -71,7 +71,7 @@ rm -rf ~/android/lineageos/vendor/temp
 echo Repeating breakfast after vendor files in case sth went wrong previousley
 breakfast $device
 
-echo Setting up environment variables
+echo Setting up environment variables...
 export USE_CCACHE=1
 export ANDROID_CCACHE_DIR="$HOME/android/.ccache"
 export ANDROID_CCACHE_SIZE="$ccache"
@@ -79,7 +79,7 @@ export USE_NINJA=false
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx$ram"
 export WITH_SU=true
 
-echo Printing enviroment variables
+echo Printing environment variables...
 printenv
 
 echo Cleaning...
