@@ -72,18 +72,15 @@ echo Repeating breakfast after vendor files in case sth went wrong previousley
 breakfast $device
 
 echo Setting up environment variables
+export USE_CCACHE=1
+export ANDROID_CCACHE_DIR="$HOME/android/.ccache"
+export ANDROID_CCACHE_SIZE="$ccache"
+export USE_NINJA=false
+export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx$ram"
+export WITH_SU=true
 
-echo  >> ~/.bashrc
-echo \# LineageOS Build Environment  >> ~/.bashrc
-echo 'export USE_CCACHE=1' >> ~/.bashrc
-echo 'export ANDROID_CCACHE_DIR="'$HOME'/android/.ccache"' >> ~/.bashrc
-echo 'export ANDROID_CCACHE_SIZE="'$ccache'"' >> ~/.bashrc
-echo 'export USE_NINJA=false' >> ~/.bashrc
-echo 'export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx'$ram'"' >> ~/.bashrc
-echo 'export WITH_SU=true' >> ~/.bashrc
-
-echo Sourcing .bashrc
-source ~/.bashrc
+echo Printing enviroment variables
+printenv
 
 echo Cleaning...
 cd ~/android/lineageos
