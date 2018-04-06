@@ -1,5 +1,7 @@
 #!/bin/bash
 
+exec > setup.log 2>&1
+
 trap 'exit 130' INT
 
 source settings.sh
@@ -7,8 +9,6 @@ source settings.sh
 echo Starting unattended Setup for LineageOS Build Environment...
 
 cd ~/
-
-exec > setup.log 2>&1
 
 echo Updating sources...
 sudo apt-get update
