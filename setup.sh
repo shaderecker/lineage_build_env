@@ -95,3 +95,11 @@ repopick -f -t i9300-personal-build
 
 echo Starting build...
 brunch i9300
+
+# Enable this to copy the LineageOS installer package (zip file) to a remote server via SSH
+# Specify your remote server in copy.sh
+#echo Copying to remote server
+#source copy.sh
+
+# Optional: Shut the machine down after the build
+#sudo shutdown -h
