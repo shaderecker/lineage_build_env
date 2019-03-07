@@ -96,8 +96,7 @@ export ANDROID_CCACHE_SIZE="$ccache"
 #export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx$ram"
 export WITH_SU=true
 
-echo Printing environment variables...
-printenv
+printenv | grep "CCACHE\|SU\|NINJA\|JACK"
 
 # Clean build environment
 losBANNER "Cleanup..."
