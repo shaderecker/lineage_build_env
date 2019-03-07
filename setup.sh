@@ -1,8 +1,10 @@
 #!/bin/bash
 
-exec > setup.log 2>&1
+# Import settings
+source settings.sh
 
-trap 'exit 130' INT
+# Disable update dialogues
+export DEBIAN_FRONTEND=noninteractive
 
 source settings.sh
 
