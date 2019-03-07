@@ -6,7 +6,13 @@ source settings.sh
 # Disable update dialogues
 export DEBIAN_FRONTEND=noninteractive
 
-source settings.sh
+echo "Dpkg::Options {
+        "--force-confdef";
+        "--force-confold";
+      }" | sudo tee -a  /etc/apt/apt.conf.d/50unattended-upgrades
+
+# Install banner pacakges
+sudo apt install -y figlet toilet
 
 echo Starting unattended Setup for LineageOS Build Environment...
 
