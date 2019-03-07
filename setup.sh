@@ -14,61 +14,65 @@ echo "Dpkg::Options {
 # Install banner pacakges
 sudo apt install -y figlet toilet
 
-echo Starting unattended Setup for LineageOS Build Environment...
+# Banner function
+function losBANNER {
+  toilet -f ivrit "$1"
+}
+
+losBANNER "LineageOS"
+echo
+losBANNER "Build: $device"
 
 cd ~/
 
-echo Updating sources...
+# Update installed packages
+echo
+echo
+losBANNER "Updating..."
 sudo apt-get update
-echo Updating sources finished.
-
-echo Upgrading packages...
 sudo apt-get upgrade -y --allow-unauthenticated
-echo Upgrading packages finished.
-
-echo Cleaning up...
 sudo apt-get autoremove -y
-echo Cleanup finished.
 
-echo Installing needed packages...
+# Install new required packages
+losBANNER "Installing..."
 sudo apt-get install -y bc bison build-essential curl flex git gnupg gperf libesd0-dev liblz4-tool libncurses5-dev libsdl1.2-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop maven openjdk-8-jdk pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev g++-multilib gcc-multilib lib32ncurses5-dev lib32readline6-dev lib32z1-dev imagemagick python
-echo Installing packages finished.
 
-echo Setting global gitconfig
+# Set gitconfig
 git config --global user.name "$git_name" #Specify in settings
 git config --global user.email "$git_email" #Specify in settings
 git config --global color.ui true
 
-echo Making directories
+# Create directories
 mkdir -p ~/bin
 mkdir -p ~/android/lineageos/
 
-echo Curling repo
+# Install repo tool
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
 
-echo Initializing repo
+# Initialize repo
 cd ~/android/lineageos/
-
 repo init -u git://github.com/lineageos/android.git -b cm-14.1
 
+# Switch to our custom local_manifest
 cd ~/android/lineageos/.repo
 rm -rf local_manifests
 git clone https://github.com/TheHADILP/local_manifests.git
 cd ~/android/lineageos/
 
-echo Syncing repo
+# Sync repo
+losBANNER "Syncing Repo..."
 repo sync --force-sync
 
-echo envsetup
+# Environment setup
 cd ~/android/lineageos
-
 source build/envsetup.sh
 
-echo Breakfast new device #Specify in settings
+losBANNER "Init: $device"
+# Initialize our device
 breakfast $device
 
-#echo Now we need some repository for getting vendor files #Specify in settings
+# Get device specific vendor files
 #cd ~/android/lineageos/vendor
 #mkdir -p $path
 #mkdir -p temp
@@ -80,11 +84,12 @@ breakfast $device
 #mkdir -p $path
 #cp -r ~/android/lineageos/vendor/temp/. ~/android/lineageos/vendor/$path
 #rm -rf ~/android/lineageos/vendor/temp
-#
-#echo Repeating breakfast after vendor files in case sth went wrong previously
+
+# Repeating breakfast after vendor files in case sth went wrong previously
 #breakfast $device
 
-echo Setting up environment variables...
+# Setup environment variables
+losBANNER "Env Variables..."
 export USE_CCACHE=1
 export ANDROID_CCACHE_SIZE="$ccache"
 #export USE_NINJA=false
@@ -94,20 +99,24 @@ export WITH_SU=true
 echo Printing environment variables...
 printenv
 
-echo Cleaning...
+# Clean build environment
+losBANNER "Cleanup..."
 cd ~/android/lineageos
 make clean
 
-echo Repopicking...
+# Repopick personal changes
+losBANNER "Repopicking..."
 repopick -f -t i9300-personal-build
 
-echo Starting build...
-brunch i9300
+# Actually start build
+losBANNER "Building..."
+brunch $device
 
 # Enable this to copy the LineageOS installer package (zip file) to a remote server via SSH
 # Specify your remote server in copy.sh
-#echo Copying to remote server
+#losBANNER "Copying..."
 #source copy.sh
 
 # Optional: Shut the machine down after the build
+#losBANNER "Goodbye..."
 #sudo shutdown -h
