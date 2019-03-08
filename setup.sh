@@ -6,10 +6,17 @@ source settings.sh
 # Disable update dialogues
 export DEBIAN_FRONTEND=noninteractive
 
+if ! grep -q confdef  /etc/apt/apt.conf.d/50unattended-upgrades; then
 echo "Dpkg::Options {
         "--force-confdef";
         "--force-confold";
       }" | sudo tee -a  /etc/apt/apt.conf.d/50unattended-upgrades
+fi
+
+if ! grep -q xenial /etc/apt/sources.list; then
+echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe
+deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main universe" | sudo tee -a /etc/apt/sources.list
+fi
 
 # Install banner pacakges
 sudo apt install -y figlet toilet
