@@ -73,7 +73,6 @@ losBANNER "Syncing Repo..."
 repo sync --force-sync
 
 # Environment setup
-cd ~/android/lineageos
 source build/envsetup.sh
 
 losBANNER "Init: $device"
@@ -92,6 +91,7 @@ breakfast $device
 #mkdir -p $path
 #cp -r ~/android/lineageos/vendor/temp/. ~/android/lineageos/vendor/$path
 #rm -rf ~/android/lineageos/vendor/temp
+#cd ~/android/lineageos/
 
 # Repeating breakfast after vendor files in case sth went wrong previously
 #breakfast $device
@@ -108,7 +108,6 @@ printenv | grep "CCACHE\|SU\|NINJA\|JACK"
 
 # Clean build environment
 losBANNER "Cleanup..."
-cd ~/android/lineageos
 make clean
 
 # Repopick personal changes
