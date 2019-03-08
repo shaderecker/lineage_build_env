@@ -19,7 +19,7 @@ echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe
 deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main universe" | sudo tee -a /etc/apt/sources.list
 fi
 
-# Install banner pacakges
+# Install banner packages
 sudo apt install -y figlet toilet
 
 # Banner function
