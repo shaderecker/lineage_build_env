@@ -37,9 +37,9 @@ cd ~/
 echo
 echo
 losBANNER "Updating..."
-sudo apt-get update
-sudo apt-get upgrade -y --allow-unauthenticated
-sudo apt-get autoremove -y
+sudo apt update
+sudo apt upgrade -y --allow-unauthenticated
+sudo apt autoremove -y
 
 # Install new required packages
 losBANNER "Installing..."
