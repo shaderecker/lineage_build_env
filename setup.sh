@@ -6,7 +6,7 @@ source settings.sh
 # Disable update dialogues
 export DEBIAN_FRONTEND=noninteractive
 
-if ! grep -q confdef  /etc/apt/apt.conf.d/50unattended-upgrades; then
+if ! grep -q confdef /etc/apt/apt.conf.d/50unattended-upgrades; then
 echo "Dpkg::Options {
         "--force-confdef";
         "--force-confold";
