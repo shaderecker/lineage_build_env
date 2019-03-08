@@ -13,6 +13,7 @@ echo "Dpkg::Options {
       }" | sudo tee -a  /etc/apt/apt.conf.d/50unattended-upgrades
 fi
 
+# Add Ubuntu Xenial sources
 if ! grep -q xenial /etc/apt/sources.list; then
 echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe
 deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main universe" | sudo tee -a /etc/apt/sources.list
