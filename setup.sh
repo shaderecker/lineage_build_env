@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Force default language for output (for 18.04)
+export LC_ALL=C
+
 # Import settings
 source settings.sh
 
