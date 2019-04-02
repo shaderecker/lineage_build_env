@@ -66,10 +66,13 @@ cd ~/android/lineageos/
 repo init -u git://github.com/lineageos/android.git -b cm-14.1
 
 # Switch to our custom local_manifest
+if [[ $custom_local_manifest = "true" ]]
+then
 cd ~/android/lineageos/.repo
 rm -rf local_manifests
-git clone https://github.com/TheHADILP/local_manifests.git
+git clone $custom_local_manifest_url
 cd ~/android/lineageos/
+fi
 
 # Sync repo
 losBANNER "Syncing Repo..."
@@ -83,21 +86,24 @@ losBANNER "Init: $device"
 breakfast $device
 
 # Get device specific vendor files
-#cd ~/android/lineageos/vendor
-#mkdir -p $path
-#mkdir -p temp
-#cd ~/android/lineageos/vendor/$path
-#git clone $vendor           #This whole bunch should pbb go into roomservice.xml for continuous updates
-#cp -r ~/android/lineageos/vendor/$path/*/. ~/android/lineageos/vendor/temp
-#cd ~/android/lineageos/vendor
-#rm -rf ~/android/lineageos/vendor/$path
-#mkdir -p $path
-#cp -r ~/android/lineageos/vendor/temp/. ~/android/lineageos/vendor/$path
-#rm -rf ~/android/lineageos/vendor/temp
-#cd ~/android/lineageos/
+if [[ $custom_local_manifest != "true" ]]
+then
+cd ~/android/lineageos/vendor
+mkdir -p $vendor_path
+mkdir -p temp
+cd ~/android/lineageos/vendor/$vendor_path
+git clone $vendor_files_git
+cp -r ~/android/lineageos/vendor/$vendor_path/*/* ~/android/lineageos/vendor/temp
+cd ~/android/lineageos/vendor
+rm -rf ~/android/lineageos/vendor/$vendor_path
+mkdir -p $vendor_path
+cp -r ~/android/lineageos/vendor/temp/* ~/android/lineageos/vendor/$vendor_path
+rm -rf ~/android/lineageos/vendor/temp
+cd ~/android/lineageos/
 
 # Repeating breakfast after vendor files in case sth went wrong previously
-#breakfast $device
+breakfast $device
+fi
 
 # Setup environment variables
 losBANNER "Env Variables..."
