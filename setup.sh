@@ -23,11 +23,11 @@ deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main universe" | sudo tee -a
 fi
 
 # Install banner packages
-sudo apt install -y figlet toilet
+sudo apt install -y figlet toilet boxes
 
 # Banner function
 function losBANNER {
-  toilet -f ivrit "$1"
+  toilet -f ivrit "$1" | boxes -d stone
 }
 
 losBANNER "LineageOS"
