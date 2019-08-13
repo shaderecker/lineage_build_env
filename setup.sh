@@ -111,7 +111,11 @@ export USE_CCACHE=1
 export ANDROID_CCACHE_SIZE="$ccache"
 #export USE_NINJA=false
 #export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx$ram"
+
+if [[ $super_user = "true" ]]
+then
 export WITH_SU=true
+fi
 
 printenv | grep "CCACHE\|SU\|NINJA\|JACK"
 
