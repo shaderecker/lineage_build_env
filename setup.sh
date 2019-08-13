@@ -117,7 +117,7 @@ then
 export WITH_SU=true
 fi
 
-printenv | grep "CCACHE\|SU\|NINJA\|JACK"
+printenv | grep "CCACHE\|WITH_SU\|NINJA\|JACK"
 
 # Clean build environment
 losBANNER "Cleanup..."
