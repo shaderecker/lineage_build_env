@@ -136,6 +136,9 @@ brunch $device
 #losBANNER "Copying..."
 #source copy.sh
 
-# Optional: Shut the machine down after the build
-#losBANNER "Goodbye..."
-#sudo shutdown -h
+# Shuts the machine down after the build
+if [[ $shutdown = "true" ]]
+then
+losBANNER "Goodbye..."
+sudo shutdown -h
+fi

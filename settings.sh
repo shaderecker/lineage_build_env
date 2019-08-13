@@ -17,3 +17,5 @@ ccache="100G"
 ram="16G"
 
 super_user="true"
+
+shutdown="true"
