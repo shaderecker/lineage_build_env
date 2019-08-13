@@ -63,7 +63,7 @@ chmod a+x ~/bin/repo
 
 # Initialize repo
 cd ~/android/lineageos/
-repo init -u git://github.com/lineageos/android.git -b cm-14.1
+repo init -u git://github.com/lineageos/android.git -b $lineage_version
 
 # Switch to our custom local_manifest
 if [[ $custom_local_manifest = "true" ]]

@@ -3,6 +3,7 @@
 git_name="Sebastian Haderecker"
 git_email="sebastian.haderecker@gmail.com"
 
+lineage_version="cm-14.1"
 device="i9300"
 
 vendor_files_git="https://github.com/TheHADILP/proprietary_vendor_samsung.git"
