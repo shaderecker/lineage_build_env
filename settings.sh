@@ -13,5 +13,5 @@ ccache="100G"
 ram="16G"
 
 
-custom_local_manifest="truee"
+custom_local_manifest="true"
 custom_local_manifest_url="https://github.com/TheHADILP/local_manifests.git "
