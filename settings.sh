@@ -21,4 +21,6 @@ super_user="true"
 personal_repopicks="true"
 repopick_topic="i9300-personal-build"
 
+scp_copy="true"
+
 shutdown="true"

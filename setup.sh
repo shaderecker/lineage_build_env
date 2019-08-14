@@ -134,10 +134,12 @@ fi
 losBANNER "Building..."
 brunch $device
 
-# Enable this to copy the LineageOS installer package (zip file) to a remote server via SSH
-# Specify your remote server in copy.sh
-#losBANNER "Copying..."
-#source copy.sh
+# Copy the LineageOS installer zip file to a remote server via scp
+if [[ $scp_copy = "true" ]]
+then
+losBANNER "Copying..."
+source copy.sh
+fi
 
 # Shuts the machine down after the build
 if [[ $shutdown = "true" ]]
