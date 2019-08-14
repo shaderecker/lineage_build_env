@@ -22,5 +22,8 @@ personal_repopicks="true"
 repopick_topic="i9300-personal-build"
 
 scp_copy="true"
+remote_user="ubuntu"
+remote_host="1.2.3.4"
+remote_directory="~/html"
 
 shutdown="true"
