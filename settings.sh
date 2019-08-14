@@ -18,4 +18,7 @@ ram="16G"
 
 super_user="true"
 
+personal_repopicks="true"
+repopick_topic="i9300-personal-build"
+
 shutdown="true"

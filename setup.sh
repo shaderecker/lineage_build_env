@@ -124,8 +124,11 @@ losBANNER "Cleanup..."
 make clean
 
 # Repopick personal changes
+if [[ $personal_repopicks = "true" ]]
+then
 losBANNER "Repopicking..."
-repopick -f -t i9300-personal-build
+repopick -f -t $repopick_topic
+fi
 
 # Actually start build
 losBANNER "Building..."
