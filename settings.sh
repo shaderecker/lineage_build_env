@@ -21,7 +21,7 @@ super_user="true"
 personal_repopicks="true"
 repopick_topic="i9300-personal-build"
 
-scp_copy="true"
+scp_copy="false"
 remote_user="ubuntu"
 remote_host="1.2.3.4"
 remote_directory="~/html"
