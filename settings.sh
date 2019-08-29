@@ -14,6 +14,7 @@ custom_local_manifest_url="https://github.com/TheHADILP/local_manifests.git"
 
 ccache="100G"
 
+low_ram="false"
 ram="16G"
 
 super_user="true"

@@ -109,8 +109,12 @@ fi
 losBANNER "Env Variables..."
 export USE_CCACHE=1
 export ANDROID_CCACHE_SIZE="$ccache"
-#export USE_NINJA=false
-#export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx$ram"
+
+if [[ $low_ram = "true" ]]
+then
+export USE_NINJA=false
+export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx$ram"
+fi
 
 if [[ $super_user = "true" ]]
 then
