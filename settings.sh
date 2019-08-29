@@ -26,4 +26,4 @@ remote_user="ubuntu"
 remote_host="1.2.3.4"
 remote_directory="~/html"
 
-shutdown="true"
+shutdown="false"
