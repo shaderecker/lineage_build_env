@@ -1,7 +1,7 @@
 # Unattended Setup of Build Environment & Device Build for LineageOS
 
 You want to build [LineageOS](https://lineageos.org/) for your Android device but have no clue how to do that?  
-Or your are just lazy (like me)?
+Or you are just lazy (like me)?
 
 ## Solution
 This script solves this problem by offering an easy to use solution.  
