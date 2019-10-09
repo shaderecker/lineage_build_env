@@ -6,11 +6,11 @@ git_email="sebastian.haderecker@gmail.com"
 lineage_version="cm-14.1"
 device="i9300"
 
-vendor_files_git="https://github.com/TheHADILP/proprietary_vendor_samsung.git"
-vendor_path="samsung"
-
 custom_local_manifest="true"
 custom_local_manifest_url="https://github.com/TheHADILP/local_manifests.git"
+
+vendor_files_git="https://github.com/TheHADILP/proprietary_vendor_samsung.git"
+vendor_path="samsung"
 
 ccache="100G"
 
