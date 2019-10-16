@@ -9,7 +9,7 @@ Just provide the script with your settings, like which device it should build fo
 
 
 ## Usage
-Clone the repository with ```git clone https://github.com/TheHADILP/lineage_build_env.git```.  
+Clone the repository with ```git clone https://github.com/shaderecker/lineage_build_env.git```.  
 Configure your device and additional settings in ```settings.sh```.  
 Start the setup and build process from a shell with ```./start.sh```.  
 The script fully operates in the background, so you can close the SSH terminal session and relax.  
@@ -43,10 +43,10 @@ Specify the device to build for.
 Point to a git repository with your own local_manifest.  
 With that, you can add/remove projects or specify a source for the proprietary vendor blobs.  
 The repository's name has to be ```local_manifests```.  
-See here for an example: https://github.com/TheHADILP/local_manifests.  
+See here for an example: https://github.com/shaderecker/local_manifests.  
 Enable feature with "true".
 * custom_local_manifest="true"
-* custom_local_manifest_url="https://github.com/TheHADILP/local_manifests.git"
+* custom_local_manifest_url="https://github.com/shaderecker/local_manifests.git"
 
 :warning::warning::warning:**DISCLAIMER**:warning::warning::warning:  
 Enabling this option disables the ```vendor_files_git``` option.  
@@ -56,8 +56,8 @@ You have two possibilities:
 
 ### Proprietary Vendor Blobs
 If you have not previously enabled the ```custom_local_manifest``` option (and provided the proprietary vendor blobs in the local manifest), you can do that now with a link to a git repository.  
-See here for an example: https://github.com/TheHADILP/proprietary_vendor_samsung.  
-* vendor_files_git="https://github.com/TheHADILP/proprietary_vendor_samsung.git"
+See here for an example: https://github.com/shaderecker/proprietary_vendor_samsung.  
+* vendor_files_git="https://github.com/shaderecker/proprietary_vendor_samsung.git"
 
 :warning::warning::warning:**DISCLAIMER**:warning::warning::warning:  
 If the ```custom_local_manifest``` option is enabled, this option won't have any effect.  
