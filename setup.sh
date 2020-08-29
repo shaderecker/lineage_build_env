@@ -3,6 +3,9 @@
 # Force default language for output (for 18.04)
 export LC_ALL=C
 
+# Save current working directory
+current_directory=$(pwd)
+
 # Import settings
 source settings.sh
 
@@ -142,6 +145,7 @@ brunch $device
 if [[ $scp_copy = "true" ]]
 then
 losBANNER "Copying..."
+cd $current_directory
 source copy.sh
 fi
 
